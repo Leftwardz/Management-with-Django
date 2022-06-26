@@ -7,9 +7,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+
     <title>Home</title>
 </head>
 <body>
-    <h1 class="home" >Welcome to the Home Page!</h1>
+    <nav class="home">
+        <div><img class="logo" src="{% static 'logo.png' %}" alt="site logo"></div>
+        <div><h1 class="title">Django Projet</h1></div>
+        <div class="btn_login_container"><a class="btn_login" href="#">Login</a></div>
+    </nav>
 </body>
 </html>
