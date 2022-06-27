@@ -7,21 +7,28 @@
 body {
     margin: auto;
     width: 1280px;
-    background-image: url('background.png');
-    background-size: cover;
-    background-color: #9a2501;
+    background-image: linear-gradient(-255deg, #1A1A1A, #343434);
 }
 
 .home{
-    font-family: 'Titan One', cursive;
     display: flex;
     justify-content: space-between;
-    color: white;
     text-align: center;
-    height: 80px;
     align-items: center;
-    text-shadow: 2px 2px 3px #000000;
-    text-decoration: none;
+    height: 80px;
+    padding:10px
+}
+
+.title {
+    font-family: 'Titan One';
+    font-size: 2.4em;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 4px 4px 4px #000,
+                 4px -4px 4px #000,
+                 -4px 4px 4px #000,
+                 -4px -4px 4px #000;
 }
 
 .logo {
@@ -32,13 +39,17 @@ body {
 }
 
 .btn_login{
+    font-family: 'Titan One';
     background-color: coral;
-    margin-right: 20px;
     border: solid 2px black;
     border-radius: 10px;
     padding: 10px 20px;
     transition: 0.5s;
     color: white;
+    text-shadow: 2px 2px 2px #000,
+                 2px -2px 2px #000,
+                 -2px 2px 2px #000,
+                 -2px -2px 2px #000;
 }
 
 .btn_login:hover {
