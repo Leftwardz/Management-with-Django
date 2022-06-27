@@ -1,3 +1,4 @@
+comando_basicos.txt
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -26,6 +27,8 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+media/
+
 MANIFEST
 
 # PyInstaller

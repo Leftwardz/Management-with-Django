@@ -4,3 +4,4 @@ python manage.py migrate  // Cria banco de dados configurado em settings.py
 python manage.py runserver // Run server
 python manage.py createsuperuser // Criar super usuario
 python manage.py makemigrations // Cria arquivo migrations que diz como se deve criar as tabelas no banco de dados
+https://management-with-django.herokuapp.com/ | https://git.heroku.com/management-with-django.git
