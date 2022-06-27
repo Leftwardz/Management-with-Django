@@ -19,5 +19,15 @@
         <div><h1 class="title">Django Projet</h1></div>
         <div class="btn_login_container"><a class="btn_login" href="#">Login</a></div>
     </nav>
+    <main>
+        <div class="clients_container">
+        {% for client in clients %}
+            <section class="clients">
+                <div class="client_name">{{client.first_name}} {{client.last_name}}, {{client.age}}</div>
+                <div class="client_bio">{{client.bio}}</div>
+            </section>
+        {% endfor %}
+        </div>
+    </main>
 </body>
 </html>

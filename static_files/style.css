@@ -1,5 +1,3 @@
-{% load static %}
-
 *{
     text-decoration: none;
     margin: 0px;
@@ -7,6 +5,8 @@
 }
 
 body {
+    margin: auto;
+    width: 1280px;
     background-image: url('background.png');
     background-size: cover;
     background-color: #9a2501;
@@ -45,4 +45,36 @@ body {
     background-color: #FFA726;
     cursor: pointer;
     font-size: 1.1em;
+}
+/* ---------------------- Clients Section ---------------------------------------------*/
+
+.clients_container{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.clients{
+    margin: 10px;
+    text-align: center;
+    padding: 10px;
+    height: 80px;
+    width: 200px;
+    border: solid 2px black;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: darkorange;
+    box-shadow: 5px 5px 10px black;
+}
+
+.client_name{
+    font-family: 'Titan One', cursive;
+}
+
+.client_bio{
+    padding: 5px;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 14px;
 }
