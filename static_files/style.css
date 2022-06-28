@@ -69,7 +69,7 @@ body {
 .clients_container{
     display: flex;
     margin: auto;
-    width: 1280px;
+    width: 75%;
     flex-wrap: wrap;
     margin-top: 40px;
 
