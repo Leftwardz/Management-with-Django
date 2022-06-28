@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: linear-gradient(-255deg, #1A1A1A, #343434);
+    background-image: linear-gradient(45deg, #1A1A1A, #343434);
     height: 100vh;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .title {
-    width:80%
+    width:80%;
     font-family: 'Titan One';
     font-size: 2.4em;
     color: #fff;
