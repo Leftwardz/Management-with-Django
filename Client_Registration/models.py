@@ -6,7 +6,7 @@ class Client(models.Model):
     last_name = models.CharField(max_length=50)
     age = models.DecimalField(max_digits=3, decimal_places=0)
     bio = models.TextField()
-    image = models.ImageField(upload_to='client_image')
+    image = models.ImageField(upload_to='client_image', blank=True)
 
     def __str__(self):
         return f'{self.first_name}  {self.last_name}'
