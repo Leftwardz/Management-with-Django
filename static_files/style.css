@@ -5,6 +5,13 @@
     padding: 0px;
     font-weight: normal;
 }
+a{
+    color: red;
+    text-shadow: 1px 1px 1px #000,
+                 1px -1px 1px #000,
+                 -1px 1px 1px #000,
+                 -1px -1px 1px #000;
+}
 
 body {
     display: flex;
@@ -174,7 +181,7 @@ body {
     margin: 35px;
 }
 
-.modal > div > div > input{
+.input_modal {
     margin: 6px 0px;
     transform: translateY(-3px);
     height: 30px;

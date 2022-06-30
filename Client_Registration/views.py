@@ -1,4 +1,5 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from .models import Client
 from django.contrib import messages
@@ -21,3 +22,8 @@ def home(request):
             messages.add_message(request, messages.ERROR, 'Erro no login.')
 
     return render(request, 'Client_Registration/home.html', data)
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('home_url')
