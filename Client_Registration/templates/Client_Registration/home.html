@@ -16,9 +16,30 @@
 <body>
     <nav class="navbar">
         <div class="logo_container"><img class="logo" src="{% static 'logo.png' %}" alt="site logo"></div>
+
         <h1 class="title">Django Projet</h1>
-        <div class="btn_login_container"><a class="btn_login" href="#">Login</a></div>
+
+        <div class="btn_login_container">
+            <a href="#openModal" class="btn_login">Login</a>
+        </div>
+
+        <div id="openModal" class="modal">
+            <div>
+                <a href="#close" title="Close" class="close">x</a>
+                <h2>Realizar Login</h2>
+                <div class="user_container">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div>
+                    <a href="#login" class="btn_login">Login</a>
+                </div>
+            </div>
+        </div>
     </nav>
+
     <main>
         <div class="clients_container">
         {% if clients %}
@@ -31,6 +52,7 @@
             {% endif %}
         </div>
     </main>
+
     <footer class="footer">
         Developed by Nathan Alvarenga
     </footer>

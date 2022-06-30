@@ -9,7 +9,8 @@ body {
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(45deg, #1A1A1A, #343434);
-    height: 100vh;
+    min-height: 100vh;
+    font-family: 'Titan One';
 }
 
 .navbar {
@@ -26,7 +27,8 @@ body {
 }
 
 .logo_container {
-    width: 30%
+    width: 30%;
+    height: 80px;
 }
 
 .logo {
@@ -70,6 +72,7 @@ body {
     cursor: pointer;
     font-size: 1.1em;
 }
+
 /* ---------------------- Clients Section ---------------------------------------------*/
 
 .clients_container{
@@ -106,7 +109,6 @@ body {
 }
 
 /* ---------------------- Footer ---------------------------------------------*/
-
 .footer {
     margin-top: auto;
     font-size: 20px;
@@ -117,5 +119,85 @@ body {
     -webkit-background-clip: text;
     color: transparent;
     background-image: linear-gradient(0deg, #ffffff, #737373);
-    align-self: flex-end
 }
+
+
+/* ---------------------- Modal ---------------------------------------------*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 1.5em;
+    background: rgba(0,0,0,0.4);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal > div {
+    font-family: 'Titan One';
+    color: white;
+    width: 300px;
+    height: 50%;
+    top: 25%;
+    position: relative;
+    margin: auto;
+    padding: 15px 20px;
+    background-image: linear-gradient(15deg, coral, #995400);
+    border: solid 3px black;
+    text-shadow: 3px 3px 1px #000,
+                 3px -3px 1px #000,
+                 -3px 3px 1px #000,
+                 -3px -3px 1px #000;
+}
+
+.modal > div > div {
+    margin: 35px;
+}
+
+.modal > div > div > input{
+    margin: 6px 0px;
+    transform: translateY(-3px);
+    height: 30px;
+    width: 160px;
+    border: solid 2px black;
+    box-shadow: 3px 3px 2px black;
+    font-family: fantasy;
+    text-align: center;
+}
+
+.close {
+    font-family: Arial;
+    position: absolute;
+    width: 30px;
+    padding: 6px 0px;
+    right: -15px;
+    top: -20px;
+    text-align: center;
+    margin-top: 5px;
+    background: coral;
+    border-radius: 50%;
+    border: solid 3px black;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000,
+                 1px -1px 1px #000,
+                 -1px 1px 1px #000,
+                 -1px -1px 1px #000;
+}
+
+.pass_container {
+    margin-bottom: 80px;
+}
+
