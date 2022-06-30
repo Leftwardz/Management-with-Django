@@ -20,35 +20,46 @@
         <h1 class="title">Django Projet</h1>
 
         <div class="btn_login_container">
-            <a href="#openModal" class="btn_login">Login</a>
+            {% if user.is_authenticated %}
+                <p class="login_authenticated">Olá {{user.username}}!</p>
+            {% else %}
+                <a href="#openModal" class="btn_login">Login</a>
+            {% endif%}
         </div>
 
-        <div id="openModal" class="modal">
-            <div>
-                <a href="#close" title="Close" class="close">x</a>
-                <h2>Realizar Login</h2>
-                <div class="user_container">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password">
-                </div>
+        {% if not user.is_authenticated %}
+            <div id="openModal" class="modal">
                 <div>
-                    <a href="#login" class="btn_login">Login</a>
+                    <a href="#close" title="Close" class="close">x</a>
+                    <h2>Realizar Login</h2>
+                    <div class="user_container">
+                        <form method="post">
+                            {% csrf_token %}
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password">
+                            {% if messages %}
+                                <p class="error_message">Username or Password are incorrect</p>
+                            {% endif %}
+                            <input type="submit" class="btn_login form_btn" value="Login">
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endif %}
+
     </nav>
 
     <main>
         <div class="clients_container">
-        {% if clients %}
-        {% for client in clients %}
+            {% if clients %}
+            {% for client in clients %}
             <section class="clients">
                 <div class="client_name">{{client.first_name}} {{client.last_name}}, {{client.age}}</div>
                 <div class="client_bio">{{client.bio}}</div>
             </section>
-        {% endfor %}
+            {% endfor %}
             {% endif %}
         </div>
     </main>
@@ -56,6 +67,5 @@
     <footer class="footer">
         Developed by Nathan Alvarenga
     </footer>
-
 </body>
 </html>
