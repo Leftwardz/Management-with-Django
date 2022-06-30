@@ -1,61 +1,18 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+{% extends 'base.html' %}
 
-    <title>Home</title>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo_container"><img class="logo" src="{% static 'logo.png' %}" alt="site logo"></div>
+{% block title %}Home{% endblock %}
 
-        <h1 class="title">Django Projet</h1>
-
-        <div class="btn_login_container">
-            <a href="#openModal" class="btn_login">Login</a>
-        </div>
-
-        <div id="openModal" class="modal">
-            <div>
-                <a href="#close" title="Close" class="close">x</a>
-                <h2>Realizar Login</h2>
-                <div class="user_container">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div>
-                    <a href="#login" class="btn_login">Login</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
+{% block main %}
     <main>
         <div class="clients_container">
-        {% if clients %}
-        {% for client in clients %}
-            <section class="clients">
-                <div class="client_name">{{client.first_name}} {{client.last_name}}, {{client.age}}</div>
-                <div class="client_bio">{{client.bio}}</div>
-            </section>
-        {% endfor %}
+            {% if clients %}
+                {% for client in clients %}
+                    <section class="clients">
+                        <div class="client_name">{{client.first_name}} {{client.last_name}}, {{client.age}}</div>
+                        <div class="client_bio">{{client.bio}}</div>
+                    </section>
+                {% endfor %}
             {% endif %}
         </div>
     </main>
-
-    <footer class="footer">
-        Developed by Nathan Alvarenga
-    </footer>
-
-</body>
-</html>
+{% endblock %}

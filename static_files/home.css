@@ -3,6 +3,14 @@
     text-decoration: none;
     margin: 0px;
     padding: 0px;
+    font-weight: normal;
+}
+a{
+    color: red;
+    text-shadow: 1px 1px 1px #000,
+                 1px -1px 1px #000,
+                 -1px 1px 1px #000,
+                 -1px -1px 1px #000;
 }
 
 body {
@@ -55,6 +63,7 @@ body {
 
 .btn_login{
     font-family: 'Titan One';
+    font-size: 1em;
     background-color: coral;
     border: solid 2px black;
     border-radius: 10px;
@@ -73,6 +82,14 @@ body {
     font-size: 1.1em;
 }
 
+.login_authenticated{
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 1px 1px 1px #000,
+                 1px -1px 1px #000,
+                 -1px 1px 1px #000,
+                 -1px -1px 1px #000;
+}
 /* ---------------------- Clients Section ---------------------------------------------*/
 
 .clients_container{
@@ -121,7 +138,6 @@ body {
     background-image: linear-gradient(0deg, #ffffff, #737373);
 }
 
-
 /* ---------------------- Modal ---------------------------------------------*/
 
 .modal {
@@ -149,12 +165,11 @@ body {
     font-family: 'Titan One';
     color: white;
     width: 300px;
-    height: 50%;
-    top: 25%;
+    top: 16%;
     position: relative;
     margin: auto;
     padding: 15px 20px;
-    background-image: linear-gradient(15deg, coral, #995400);
+    background-image: linear-gradient(15deg, #ff9e28, darkorange);
     border: solid 3px black;
     text-shadow: 3px 3px 1px #000,
                  3px -3px 1px #000,
@@ -166,7 +181,7 @@ body {
     margin: 35px;
 }
 
-.modal > div > div > input{
+.input_modal {
     margin: 6px 0px;
     transform: translateY(-3px);
     height: 30px;
@@ -201,3 +216,19 @@ body {
     margin-bottom: 80px;
 }
 
+.error_message {
+    font-size: 0.6em;
+    background-color: red;
+    border: solid 2px black;
+    padding: 5px;
+    margin: 5px 0px;
+    text-shadow: 1px 1px 1px #000,
+                 1px -1px 1px #000,
+                 -1px 1px 1px #000,
+                 -1px -1px 1px #000;
+}
+
+.form_btn {
+    display: inline-block;
+    margin: 10px 0px;
+}
