@@ -21,7 +21,7 @@
 
             <div class="btn_login_container">
                 {% if user.is_authenticated %}
-                    <p class="login_authenticated">Olá {{user.username}}!</p>
+                    <p class="login_authenticated">Olá {{user.username|truncatechars:9}}</p>
                     <a href="{% url 'logout_url' %}">Sair</a>
                 {% else %}
                     <a href="#openModal" class="btn_login">Login</a>

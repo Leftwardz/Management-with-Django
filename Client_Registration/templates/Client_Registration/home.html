@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block main %}
     <main>
+        <div class="height"></div>
+        <form class="search_form" method="get">
+            {% csrf_token %}
+            <div class="search_container">
+                <input type="text" name="search_input" id="search_input" placeholder="Search Product">
+                <button type="submit" class="lupa"><img src="{% static 'lupa.png' %}"></button>
+            </div>
+        </form>
+        {% if user.is_authenticated %}
+            <a href="#" class="add_product">+ Add Product </a>
+        {% endif %}
         <div class="clients_container">
             {% if clients %}
                 {% for client in clients %}

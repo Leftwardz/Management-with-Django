@@ -83,19 +83,81 @@ body {
 }
 
 .login_authenticated{
-    font-size: 1.5em;
+    font-size: 1em;
     color: white;
     text-shadow: 1px 1px 1px #000,
                  1px -1px 1px #000,
                  -1px 1px 1px #000,
                  -1px -1px 1px #000;
 }
+
+.height{
+    height: 100px;
+    width: 100%;
+}
 /* ---------------------- Clients Section ---------------------------------------------*/
+.search_form{
+    text-align: center;
+    margin: 30px auto 15px auto;
+}
+
+.search_container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    align-items: center;
+    border: solid 3px black;
+    box-shadow: 3px 3px 4px #0f0c08;
+}
+
+#search_input{
+    font-family: 'Titan One';
+    width: 100%;
+    padding: 3px;
+    height: 35px;
+    background-color: white;
+    max-width: 500px;
+    border: none;
+    padding: 5px;
+}
+
+#search_input::placeholder{
+    font-family: 'Titan One';
+    color: #bebebe;
+}
+
+#search_input:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.lupa {
+    margin-right: 5px;
+    border: none;
+    background-color: white;
+}
+
+.lupa:hover{
+    cursor: pointer;
+}
+
+.add_product {
+    text-align: center;
+    display: block;
+    color: white;
+    margin: auto;
+}
+
+.add_product:hover {
+    color: #737373;
+}
 
 .clients_container{
     display: flex;
     justify-content: center;
-    margin: 90px auto 0px auto;
+    margin: 0px auto;
     width: 75%;
     flex-wrap: wrap;
     padding: 20px;
