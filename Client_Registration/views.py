@@ -6,8 +6,20 @@ from django.contrib import messages
 
 
 def home(request):
-    clients = Client.objects.all()
-    data = {'clients': clients}
+    search = request.GET['search_input']
+
+    if not bool(search):
+        clients = Client.objects.all()
+        data = {'clients': clients}
+    else:
+        first_name = list(Client.objects.filter(first_name__icontains=search))
+        last_name = list(Client.objects.filter(last_name__icontains=search))
+        age = list(Client.objects.filter(age__icontains=search))
+        bio = list(Client.objects.filter(bio__icontains=search))
+
+        clients = set(first_name + last_name + age + bio)
+        data = {'clients': clients}
+
 
     if request.method == 'POST':
         username = request.POST['username']
