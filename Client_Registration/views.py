@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from .models import Client
 from django.contrib import messages
-
+from django.db.models import Q
 
 def home(request):
     search = request.GET['search_input']
@@ -12,14 +12,9 @@ def home(request):
         clients = Client.objects.all()
         data = {'clients': clients}
     else:
-        first_name = list(Client.objects.filter(first_name__icontains=search))
-        last_name = list(Client.objects.filter(last_name__icontains=search))
-        age = list(Client.objects.filter(age__icontains=search))
-        bio = list(Client.objects.filter(bio__icontains=search))
-
-        clients = set(first_name + last_name + age + bio)
+        clients = Client.objects.filter(Q(first_name__icontains=search) | Q(last_name__icontains=search) |
+                                        Q(age__icontains=search) | Q(bio__icontains=search))
         data = {'clients': clients}
-
 
     if request.method == 'POST':
         username = request.POST['username']
