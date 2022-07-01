@@ -6,9 +6,9 @@ from django.contrib import messages
 from django.db.models import Q
 
 def home(request):
-    search = request.GET['search_input']
+    search = request.GET.get('search_input')
 
-    if not bool(search):
+    if not search:
         clients = Client.objects.all()
         data = {'clients': clients}
     else:
