@@ -21,6 +21,8 @@
                     <div class="client_bio">{{client.bio}}</div>
                 </section>
             {% endfor %}
+        {% else %}
+            <img class="nothing_found" src="{% static 'nothing_found.png' %}">
         {% endif %}
     </div>
 {% endblock %}

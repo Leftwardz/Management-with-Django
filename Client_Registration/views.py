@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.db.models import Q
 
 def home(request):
-    search = request.GET.get('search_input')
+    search = request.GET.get('search_input').strip()
 
     if not search:
         clients = Client.objects.all()
@@ -18,8 +18,8 @@ def home(request):
         data = {'clients': clients}
 
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
+        username = request.POST['username'].strip()
+        password = request.POST['password'].strip()
         user = authenticate(request, username=username, password=password)
 
         if user is not None:

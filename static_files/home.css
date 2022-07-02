@@ -188,6 +188,15 @@ body {
     font-size: 14px;
 }
 
+.nothing_found {
+    height: 80%;
+    width: 100%;
+    object-fit: contain;
+    min-width: 280px;
+    max-width: 600px;
+}
+
+
 /* ---------------------- Footer ---------------------------------------------*/
 .footer {
     margin-top: auto;
