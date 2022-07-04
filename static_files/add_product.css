@@ -87,4 +87,12 @@ input[type="checkbox"] {
     .height{
         height: 0px;
     }
+    .btn_container {
+        height: 100px;
+    }
+
+    .block {
+        margin: 5px 0px;
+        display: inline-block;
+    }
 }

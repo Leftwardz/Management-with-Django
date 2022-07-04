@@ -14,8 +14,8 @@
             {% csrf_token %}
             {{form}}
             <div class="btn_container">
-                <button type="submit" class="btn_login">Edit person</button>
-                <a href="{% url 'delete_url' client_id %}" class="btn_login redcolor">Deletar</a>
+                <button type="submit" class="btn_login block">Edit person</button>
+                <a href="{% url 'delete_url' client_id %}" class="btn_login redcolor block">Deletar</a>
             </div>
         </form>
     </section>
