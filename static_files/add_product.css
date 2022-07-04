@@ -31,6 +31,8 @@ form > input {
 form > textarea {
     margin: 6px 0px;
     width: 100%;
+    max-width: 100%;
+    min-width: 100%;
     border: solid 2px black;
     box-shadow: 3px 3px 2px black;
     font-family: fantasy;
@@ -39,7 +41,7 @@ form > textarea {
 }
 
 input[type="file"] {
-    display: none;
+    margin: 20px 0px;
 }
 
 .center_btn {

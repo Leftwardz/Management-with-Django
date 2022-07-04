@@ -7,12 +7,13 @@ from django.contrib import messages
 from django.db.models import Q
 
 def home(request):
-    search = request.GET.get('search_input').strip()
+    search = request.GET.get('search_input')
 
     if not search:
         clients = Client.objects.all()
         data = {'clients': clients}
     else:
+        search.strip()
         clients = Client.objects.filter(Q(first_name__icontains=search) | Q(last_name__icontains=search) |
                                         Q(age__icontains=search) | Q(bio__icontains=search))
         data = {'clients': clients}
