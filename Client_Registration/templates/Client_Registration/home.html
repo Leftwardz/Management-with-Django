@@ -12,8 +12,22 @@
     </form>
     {% if user.is_authenticated %}
         <a href="{% url 'add_product_url' %}" class="add_product">+ Add Person </a>
-    {% endif %}
-    <div class="clients_container">
+        <div class="clients_container">
+            {% if clients %}
+                {% for client in clients %}
+                    <a href="{% url 'update_url' client.id %}">
+                        <section class="clients">
+                            <div class="client_name">{{client.first_name}} {{client.last_name}}, {{client.age}}</div>
+                            <div class="client_bio">{{client.bio}}</div>
+                        </section>
+                    </a>
+                {% endfor %}
+            {% else %}
+                <img class="nothing_found" src="{% static 'nothing_found.png' %}">
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="clients_container">
         {% if clients %}
             {% for client in clients %}
                 <section class="clients">
@@ -25,4 +39,6 @@
             <img class="nothing_found" src="{% static 'nothing_found.png' %}">
         {% endif %}
     </div>
+    {% endif %}
+
 {% endblock %}

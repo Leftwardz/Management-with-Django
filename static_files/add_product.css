@@ -16,6 +16,10 @@
     margin-bottom: 30px;
 }
 
+form > a {
+    color: white;
+}
+
 form > input {
     margin: 6px 0px;
     transform: translateY(-3px);
@@ -44,6 +48,10 @@ input[type="file"] {
     margin: 20px 0px;
 }
 
+input[type="checkbox"] {
+    display: none
+}
+
 .center_btn {
     font-size: 0.8em;
     margin-left: 50%;
@@ -52,6 +60,21 @@ input[type="file"] {
 
 .center_btn:hover {
     font-size: 0.9em;
+}
+
+.btn_container {
+    text-align: center;
+    height: 35px;
+
+}
+
+.redcolor{
+    background-color: red;
+}
+
+.redcolor:hover {
+    background-color: darkred;
+
 }
 
 @media only screen and (max-width: 500px) {
