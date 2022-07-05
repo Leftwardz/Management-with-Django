@@ -15,14 +15,14 @@
     </head>
     <body>
         <nav class="navbar">
-            <div class="logo_container"><img class="logo" src="{% static 'logo.png' %}" alt="site logo"></div>
+            <div class="logo_container"><a href="{% url 'home_url' %}"><img class="logo" src="{% static 'logo.png' %}" alt="site logo"></a></div>
 
             <h1 class="title">Django Projet</h1>
 
             <div class="btn_login_container">
                 {% if user.is_authenticated %}
-                    <p class="login_authenticated">Olá {{user.username|truncatechars:9}}</p>
-                    <a href="{% url 'logout_url' %}">Sair</a>
+                    <p class="login_authenticated">Hi {{user.username|truncatechars:9}}</p>
+                    <a href="{% url 'logout_url' %}" class="logout">Log out</a>
                 {% else %}
                     <a href="#openModal" class="btn_login">Login</a>
                 {% endif%}

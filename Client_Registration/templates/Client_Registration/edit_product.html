@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Add Product{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'add_product.css' %}">
+{% endblock %}
+
+{% block main %}
+    <section class="form_container">
+        <h2 class='form_title'>Edit Person</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{form}}
+            <div class="btn_container">
+                <button type="submit" class="btn_login block">Edit person</button>
+                <a href="{% url 'delete_url' client_id %}" class="btn_login redcolor block">Deletar</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

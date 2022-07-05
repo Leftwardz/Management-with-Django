@@ -8,6 +8,7 @@ from django.db.models import Q
 
 def home(request):
     search = request.GET.get('search_input')
+
     if not search:
         clients = Client.objects.all()
         data = {'clients': clients}
@@ -45,3 +46,21 @@ def add_product(request):
 
     data = {'form': form}
     return render(request, 'Client_Registration/add_product.html', data)
+
+@login_required
+def update(request, id):
+    client = Client.objects.get(pk=id)
+    form = Client_Form(request.POST or None, instance=client)
+
+    if form.is_valid():
+        form.save()
+        return redirect('home_url')
+
+    data = {'form': form, 'client_id': id}
+    return render(request, 'Client_Registration/edit_product.html', data)
+
+@login_required
+def delete(request, id):
+    client = Client.objects.get(pk=id)
+    client.delete()
+    return redirect('home_url')

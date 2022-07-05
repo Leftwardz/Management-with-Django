@@ -5,7 +5,7 @@
     padding: 0px;
     font-weight: normal;
 }
-a{
+.logout{
     color: red;
     text-shadow: 1px 1px 1px #000,
                  1px -1px 1px #000,
@@ -32,6 +32,7 @@ body {
     padding: 50px 0px;
     border-bottom: solid 2px #B4B4B4;
     background-image: linear-gradient(15deg, #292929, #343434);
+    z-index: 2;
 }
 
 .logo_container {
@@ -68,7 +69,7 @@ body {
     border: solid 2px black;
     border-radius: 10px;
     padding: 10px 20px;
-    transition: 0.5s;
+    transition: 0.2s;
     color: white;
     text-shadow: 2px 2px 2px #000,
                  2px -2px 2px #000,
@@ -77,9 +78,8 @@ body {
 }
 
 .btn_login:hover {
-    background-color: #FFA726;
+    background-color: darkorange;
     cursor: pointer;
-    font-size: 1.1em;
 }
 
 .login_authenticated{
@@ -145,6 +145,7 @@ body {
 }
 
 .add_product {
+    width: 40%;
     text-align: center;
     display: block;
     color: white;
@@ -165,6 +166,7 @@ body {
 }
 
 .clients{
+    color: black;
     margin: 10px;
     text-align: center;
     padding: 10px;
@@ -176,6 +178,11 @@ body {
     border-radius: 20px;
     background-color: darkorange;
     box-shadow: 5px 5px 10px black;
+    transition: 0.3s;
+}
+
+.clients:hover {
+    transform: translateY(-10px);
 }
 
 .client_name{
