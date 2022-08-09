@@ -173,7 +173,6 @@ body {
     height: 250px;
     width: 200px;
     border: solid 2px black;
-    overflow: hidden;
     text-overflow: '****';
     border-radius: 20px;
     background-color: darkorange;
@@ -185,6 +184,13 @@ body {
     transform: translateY(-10px);
 }
 
+.client_image{
+    border-radius: 50%;
+    height: 100px;
+    object-fit: cover;
+    width: 100px;
+}
+
 .client_name{
     font-family: 'Titan One', cursive;
 }
@@ -193,6 +199,8 @@ body {
     font-weight: bold;
     font-family: Arial;
     font-size: 14px;
+    overflow: hidden;
+    max-height: 98px;
 }
 
 .nothing_found {

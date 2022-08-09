@@ -39,7 +39,7 @@ def user_logout(request):
 
 @login_required
 def add_product(request):
-    form = Client_Form(request.POST or None)
+    form = Client_Form(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
         return redirect('home_url')
@@ -50,13 +50,13 @@ def add_product(request):
 @login_required
 def update(request, id):
     client = Client.objects.get(pk=id)
-    form = Client_Form(request.POST or None, instance=client)
-
+    form = Client_Form(request.POST or None, request.FILES or None, instance=client)
+    print(f'imagem: {client.image}')
     if form.is_valid():
         form.save()
         return redirect('home_url')
 
-    data = {'form': form, 'client_id': id}
+    data = {'form': form, 'client_id': id, 'client_image': client.image}
     return render(request, 'Client_Registration/edit_product.html', data)
 
 @login_required

@@ -10,10 +10,10 @@
 {% block main %}
     <section class="form_container">
         <h2 class='form_title'>Add Person</h2>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form}}
-            <button type="submit" class="btn_login center_btn">Add person</button>
+            <button type="submit" class="btn_login center_btn" name="_save">Add person</button>
         </form>
     </section>
 {% endblock %}

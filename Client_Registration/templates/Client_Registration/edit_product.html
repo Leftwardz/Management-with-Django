@@ -10,7 +10,7 @@
 {% block main %}
     <section class="form_container">
         <h2 class='form_title'>Edit Person</h2>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form}}
             <div class="btn_container">
