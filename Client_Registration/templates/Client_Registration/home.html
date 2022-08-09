@@ -32,7 +32,12 @@
         {% if clients %}
             {% for client in clients %}
                 <section class="clients">
-                    <img class="client_image" src="https://leftward-django-project.s3.amazonaws.com/static/{{client.image}}">
+                    {% if client.image %}
+                        <img class="client_image" src="https://leftward-django-project.s3.amazonaws.com/static/{{client.image}}">
+                    {% else %}
+                        <img class="client_image" src="{% static 'noimage.png' %}">
+                    {% endif %}
+
                     <div class="client_name">{{client.first_name}} {{client.last_name}}, {{client.age}}</div>
                     <div class="client_bio">{{client.bio}}</div>
                 </section>
