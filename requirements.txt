@@ -16,3 +16,4 @@ tzdata==2022.1
 urllib3==1.26.11
 gunicorn
 psycopg2
+Pillow==9.5.0
